@@ -196,8 +196,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="jc48842" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aPE-8y-q6n">
-                                                    <rect key="frame" x="15" y="4" width="65" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Korisničko ime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aPE-8y-q6n">
+                                                    <rect key="frame" x="15" y="4" width="111" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -243,6 +243,7 @@
                     <connections>
                         <outlet property="notificationsCell" destination="Dn2-sU-ne9" id="mVl-3h-0d1"/>
                         <outlet property="refreshIntervalCell" destination="VwI-J6-U0W" id="eva-J5-NKj"/>
+                        <outlet property="usernameCell" destination="A22-ve-rFo" id="9AB-NT-7cb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkG-RS-be9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,7 +370,7 @@
         <!--Login View Controller-->
         <scene sceneID="45J-PT-Tqf">
             <objects>
-                <viewController id="QaP-Nk-SVK" customClass="LoginViewController" customModule="mFER" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="QaP-Nk-SVK" customClass="LoginViewController" customModule="mFER" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IT7-np-bO3"/>
                         <viewControllerLayoutGuide type="bottom" id="q7x-XX-1xF"/>
@@ -452,7 +453,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="mFER" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabVC" id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="mFER" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

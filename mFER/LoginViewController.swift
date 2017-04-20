@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -51,6 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: LoginButton) {
+        view.endEditing(true)
         performLogin()
     }
     
@@ -69,12 +72,56 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set("15 min", forKey: UserDefaultsKeys.REFRESH)
         }
         
-        // Reset the form
-        usernameTextField.text = ""
-        passwordTextField.text = ""
-        loginButton.enable()
+        Alert.showLoader()
         
-        performSegue(withIdentifier: "LoginSegue", sender: nil)
+        var courses = [Course]()
+        
+        Alamofire.request(Endpoints.COURSES, method: .get)
+            .authenticate(user: usernameTextField.text!, password: passwordTextField.text!)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                if response.result.isFailure {
+                    Alert.hideLoader()
+                    self.loginButton.enable()
+                    
+                    self.present(self.invalidCredentialsAlertController, animated: true)
+                } else {
+                    let username = self.usernameTextField.text!
+                    let password = self.passwordTextField.text!
+                    
+                    // Reset the form
+                    self.usernameTextField.text = ""
+                    self.passwordTextField.text = ""
+                    self.loginButton.enable()
+                    Alert.hideLoader()
+                    
+                    UserDefaults.standard.set(username, forKey: UserDefaultsKeys.USERNAME)
+                    UserDefaults.standard.set(password, forKey: UserDefaultsKeys.PASSWORD)
+                    
+                    let result = JSON(response.result.value!).arrayValue
+                    
+                    for e in result {
+                        let course = Course(id: e["sifpred"].intValue, nameHr: e["nazpred_hr"].stringValue, nameEn: e["nazpred_en"].stringValue)
+                        
+                        courses.append(course)
+                        
+                        // Save to core data
+                        // Get all scores
+                        
+                        
+//                        Alamofire.request(Endpoints.scores(courseID: course.courseID()), method: .get)
+//                            .authenticate(user: self.usernameTextField.text!, password: self.passwordTextField.text!)
+//                            .validate(statusCode: 200..<300)
+//                            .responseJSON { scoresResponse in
+//                                print(JSON(scoresResponse.result.value!))
+//                          }
+                    }
+                    
+                    self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+                }
+            }
+        
+        
     }
 
     // Check if user has entered credentials

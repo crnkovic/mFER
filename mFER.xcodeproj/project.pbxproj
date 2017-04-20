@@ -26,6 +26,7 @@
 		746695701EA92226009DD3E3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466956F1EA92226009DD3E3 /* Alert.swift */; };
 		746695721EA925C5009DD3E3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695711EA925C5009DD3E3 /* UserDefaultsKeys.swift */; };
 		746695741EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695731EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift */; };
+		746695771EA93C6E009DD3E3 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695761EA93C6E009DD3E3 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		7466956F1EA92226009DD3E3 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		746695711EA925C5009DD3E3 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		746695731EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshIntervalTableViewController.swift; sourceTree = "<group>"; };
+		746695761EA93C6E009DD3E3 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		CF76B620B7D023DF40ACA3E5 /* Pods-mFER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mFER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mFER/Pods-mFER.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 		746695421EA8EC82009DD3E3 /* mFER */ = {
 			isa = PBXGroup;
 			children = (
+				746695751EA93C65009DD3E3 /* Models */,
 				746695661EA90AEE009DD3E3 /* Util */,
 				746695651EA90AE5009DD3E3 /* Networking */,
 				746695601EA8F861009DD3E3 /* Controllers */,
@@ -156,6 +159,14 @@
 				7466956F1EA92226009DD3E3 /* Alert.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		746695751EA93C65009DD3E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				746695761EA93C6E009DD3E3 /* Course.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		7FDD6400A52F11E504699C0D /* Frameworks */ = {
@@ -307,6 +318,7 @@
 				746695641EA8FBD9009DD3E3 /* CredentialsTextField.swift in Sources */,
 				7466956A1EA91405009DD3E3 /* Auth.swift in Sources */,
 				746695701EA92226009DD3E3 /* Alert.swift in Sources */,
+				746695771EA93C6E009DD3E3 /* Course.swift in Sources */,
 				746695721EA925C5009DD3E3 /* UserDefaultsKeys.swift in Sources */,
 				746695441EA8EC82009DD3E3 /* AppDelegate.swift in Sources */,
 				746695741EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift in Sources */,

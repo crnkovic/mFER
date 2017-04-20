@@ -6,5 +6,7 @@ target 'mFER' do
   use_frameworks!
 
   pod 'SVProgressHUD'
+  pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
 
 end

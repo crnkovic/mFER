@@ -11,4 +11,6 @@ import Foundation
 class UserDefaultsKeys {
     static let NOTIFICATIONS = "allowNotifications"
     static let REFRESH = "refreshInterval"
+    static let USERNAME = "username"
+    static let PASSWORD = "password"
 }

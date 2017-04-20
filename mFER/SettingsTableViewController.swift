@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SettingsTableViewController: UITableViewController {
     
@@ -16,9 +17,14 @@ class SettingsTableViewController: UITableViewController {
     // Refresh interval cell
     @IBOutlet weak var refreshIntervalCell: UITableViewCell!
     
+    // Username cell
+    @IBOutlet weak var usernameCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        usernameCell.textLabel?.text = UserDefaults.standard.object(forKey: UserDefaultsKeys.USERNAME) as? String
+        
         setupNotificationSwitch()
         setupRefreshIntervalCell()
 
@@ -55,6 +61,7 @@ class SettingsTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         
         if cell?.reuseIdentifier == "logoutCell" {
+            tableView.deselectRow(at: indexPath, animated: true)
             performLogout()
         } else if cell?.reuseIdentifier == "updateCalendar" {
             tableView.deselectRow(at: indexPath, animated: true)
@@ -64,11 +71,25 @@ class SettingsTableViewController: UITableViewController {
     
     private func performLogout() {
         Auth.logout()
-        dismiss(animated: true, completion: nil)
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let vc = storyboard.instantiateViewController(withIdentifier: "loginVC")
+            
+            appDelegate.window?.swapRootViewControllerWithAnimation(newViewController: vc, animationType: .Present)
+        }
     }
     
     private func updateCalendar() {
         Alert.showLoader()
+        
+        Alamofire.request(Endpoints.CALENDAR, method: .get)
+            .authenticate(user: Auth.username(), password: Auth.password())
+            .responseString { response in
+                print (response)
+                Alert.showSuccess(message: "Kalendar ažuriran!")
+        }
         
         // fetch calendar and update the calendar
     }
