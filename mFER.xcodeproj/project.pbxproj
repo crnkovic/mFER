@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		23B5D03B588FBEF22EF8FF83 /* Pods_mFER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7AE1FD610ED4D94F4470AD /* Pods_mFER.framework */; };
 		746695441EA8EC82009DD3E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695431EA8EC82009DD3E3 /* AppDelegate.swift */; };
-		746695461EA8EC82009DD3E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695451EA8EC82009DD3E3 /* FirstViewController.swift */; };
+		746695461EA8EC82009DD3E3 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695451EA8EC82009DD3E3 /* CoursesViewController.swift */; };
 		746695481EA8EC82009DD3E3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695471EA8EC82009DD3E3 /* SecondViewController.swift */; };
 		7466954B1EA8EC82009DD3E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 746695491EA8EC82009DD3E3 /* Main.storyboard */; };
 		7466954D1EA8EC82009DD3E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7466954C1EA8EC82009DD3E3 /* Assets.xcassets */; };
@@ -26,7 +26,16 @@
 		746695701EA92226009DD3E3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466956F1EA92226009DD3E3 /* Alert.swift */; };
 		746695721EA925C5009DD3E3 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695711EA925C5009DD3E3 /* UserDefaultsKeys.swift */; };
 		746695741EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695731EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift */; };
-		746695771EA93C6E009DD3E3 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746695761EA93C6E009DD3E3 /* Course.swift */; };
+		74D5D60E1EB50A4500C65A0E /* mFER.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D60C1EB50A4500C65A0E /* mFER.xcdatamodeld */; };
+		74D5D6351EB50CF700C65A0E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D6341EB50CF700C65A0E /* Repository.swift */; };
+		74D5D63F1EB52CDE00C65A0E /* CourseArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D63E1EB52CDE00C65A0E /* CourseArticlesTableViewController.swift */; };
+		74D5D6491EB64BA700C65A0E /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D6481EB64BA700C65A0E /* Schedule.swift */; };
+		74D5D65C1EB65C6200C65A0E /* Course+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D6561EB65C6200C65A0E /* Course+CoreDataClass.swift */; };
+		74D5D65D1EB65C6200C65A0E /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D6571EB65C6200C65A0E /* Course+CoreDataProperties.swift */; };
+		74D5D65E1EB65C6200C65A0E /* Lesson+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D6581EB65C6200C65A0E /* Lesson+CoreDataClass.swift */; };
+		74D5D65F1EB65C6200C65A0E /* Lesson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D6591EB65C6200C65A0E /* Lesson+CoreDataProperties.swift */; };
+		74D5D6601EB65C6200C65A0E /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D65A1EB65C6200C65A0E /* Score+CoreDataClass.swift */; };
+		74D5D6611EB65C6200C65A0E /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5D65B1EB65C6200C65A0E /* Score+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +43,7 @@
 		53FDB847CE23950857673E81 /* Pods-mFER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mFER.release.xcconfig"; path = "Pods/Target Support Files/Pods-mFER/Pods-mFER.release.xcconfig"; sourceTree = "<group>"; };
 		746695401EA8EC82009DD3E3 /* mFER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mFER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		746695431EA8EC82009DD3E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		746695451EA8EC82009DD3E3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		746695451EA8EC82009DD3E3 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		746695471EA8EC82009DD3E3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7466954A1EA8EC82009DD3E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7466954C1EA8EC82009DD3E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +61,16 @@
 		7466956F1EA92226009DD3E3 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		746695711EA925C5009DD3E3 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		746695731EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshIntervalTableViewController.swift; sourceTree = "<group>"; };
-		746695761EA93C6E009DD3E3 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		74D5D60D1EB50A4500C65A0E /* mFER.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mFER.xcdatamodel; sourceTree = "<group>"; };
+		74D5D6341EB50CF700C65A0E /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		74D5D63E1EB52CDE00C65A0E /* CourseArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseArticlesTableViewController.swift; sourceTree = "<group>"; };
+		74D5D6481EB64BA700C65A0E /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		74D5D6561EB65C6200C65A0E /* Course+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataClass.swift"; sourceTree = "<group>"; };
+		74D5D6571EB65C6200C65A0E /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		74D5D6581EB65C6200C65A0E /* Lesson+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataClass.swift"; sourceTree = "<group>"; };
+		74D5D6591EB65C6200C65A0E /* Lesson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		74D5D65A1EB65C6200C65A0E /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
+		74D5D65B1EB65C6200C65A0E /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF76B620B7D023DF40ACA3E5 /* Pods-mFER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mFER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mFER/Pods-mFER.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				746695511EA8EC82009DD3E3 /* Info.plist */,
+				74D5D60C1EB50A4500C65A0E /* mFER.xcdatamodeld */,
 				746695431EA8EC82009DD3E3 /* AppDelegate.swift */,
 				7466955A1EA8F4F9009DD3E3 /* Extensions.swift */,
 				7466954C1EA8EC82009DD3E3 /* Assets.xcassets */,
@@ -133,12 +152,13 @@
 		746695601EA8F861009DD3E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				746695451EA8EC82009DD3E3 /* FirstViewController.swift */,
+				746695451EA8EC82009DD3E3 /* CoursesViewController.swift */,
 				746695471EA8EC82009DD3E3 /* SecondViewController.swift */,
 				746695571EA8F3FE009DD3E3 /* LoginViewController.swift */,
 				746695611EA8F8A6009DD3E3 /* MainTabBarViewController.swift */,
 				7466956D1EA91C0F009DD3E3 /* SettingsTableViewController.swift */,
 				746695731EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift */,
+				74D5D63E1EB52CDE00C65A0E /* CourseArticlesTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -147,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				746695671EA9134D009DD3E3 /* Endpoints.swift */,
-				746695691EA91405009DD3E3 /* Auth.swift */,
 				7466956B1EA91418009DD3E3 /* Request.swift */,
 			);
 			name = Networking;
@@ -156,7 +175,10 @@
 		746695661EA90AEE009DD3E3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				746695691EA91405009DD3E3 /* Auth.swift */,
 				7466956F1EA92226009DD3E3 /* Alert.swift */,
+				74D5D6341EB50CF700C65A0E /* Repository.swift */,
+				74D5D6481EB64BA700C65A0E /* Schedule.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -164,7 +186,12 @@
 		746695751EA93C65009DD3E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				746695761EA93C6E009DD3E3 /* Course.swift */,
+				74D5D6561EB65C6200C65A0E /* Course+CoreDataClass.swift */,
+				74D5D6571EB65C6200C65A0E /* Course+CoreDataProperties.swift */,
+				74D5D6581EB65C6200C65A0E /* Lesson+CoreDataClass.swift */,
+				74D5D6591EB65C6200C65A0E /* Lesson+CoreDataProperties.swift */,
+				74D5D65A1EB65C6200C65A0E /* Score+CoreDataClass.swift */,
+				74D5D65B1EB65C6200C65A0E /* Score+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -313,19 +340,28 @@
 				7466955B1EA8F4F9009DD3E3 /* Extensions.swift in Sources */,
 				746695581EA8F3FE009DD3E3 /* LoginViewController.swift in Sources */,
 				746695481EA8EC82009DD3E3 /* SecondViewController.swift in Sources */,
+				74D5D60E1EB50A4500C65A0E /* mFER.xcdatamodeld in Sources */,
 				746695621EA8F8A6009DD3E3 /* MainTabBarViewController.swift in Sources */,
 				7466956C1EA91418009DD3E3 /* Request.swift in Sources */,
+				74D5D65F1EB65C6200C65A0E /* Lesson+CoreDataProperties.swift in Sources */,
 				746695641EA8FBD9009DD3E3 /* CredentialsTextField.swift in Sources */,
+				74D5D65D1EB65C6200C65A0E /* Course+CoreDataProperties.swift in Sources */,
 				7466956A1EA91405009DD3E3 /* Auth.swift in Sources */,
+				74D5D65E1EB65C6200C65A0E /* Lesson+CoreDataClass.swift in Sources */,
 				746695701EA92226009DD3E3 /* Alert.swift in Sources */,
-				746695771EA93C6E009DD3E3 /* Course.swift in Sources */,
+				74D5D6601EB65C6200C65A0E /* Score+CoreDataClass.swift in Sources */,
 				746695721EA925C5009DD3E3 /* UserDefaultsKeys.swift in Sources */,
+				74D5D65C1EB65C6200C65A0E /* Course+CoreDataClass.swift in Sources */,
+				74D5D6491EB64BA700C65A0E /* Schedule.swift in Sources */,
+				74D5D6351EB50CF700C65A0E /* Repository.swift in Sources */,
 				746695441EA8EC82009DD3E3 /* AppDelegate.swift in Sources */,
 				746695741EA9293F009DD3E3 /* RefreshIntervalTableViewController.swift in Sources */,
+				74D5D6611EB65C6200C65A0E /* Score+CoreDataProperties.swift in Sources */,
 				7466956E1EA91C0F009DD3E3 /* SettingsTableViewController.swift in Sources */,
 				7466955E1EA8F60B009DD3E3 /* LoginButton.swift in Sources */,
+				74D5D63F1EB52CDE00C65A0E /* CourseArticlesTableViewController.swift in Sources */,
 				746695681EA9134D009DD3E3 /* Endpoints.swift in Sources */,
-				746695461EA8EC82009DD3E3 /* FirstViewController.swift in Sources */,
+				746695461EA8EC82009DD3E3 /* CoursesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +528,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		74D5D60C1EB50A4500C65A0E /* mFER.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				74D5D60D1EB50A4500C65A0E /* mFER.xcdatamodel */,
+			);
+			currentVersion = 74D5D60D1EB50A4500C65A0E /* mFER.xcdatamodel */;
+			path = mFER.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 746695381EA8EC81009DD3E3 /* Project object */;
 }

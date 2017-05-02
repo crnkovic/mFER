@@ -1,18 +1,25 @@
 PODS:
   - Alamofire (4.4.0)
+  - AlamofireRSSParser (2.0.0):
+    - Alamofire
+  - DZNEmptyDataSet (1.8.1)
   - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - AlamofireRSSParser
+  - DZNEmptyDataSet
   - SVProgressHUD
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireRSSParser: bbad0689d597704025c4f101a1a31698fa2c1920
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: cc83e64bba48e90ebb0af6addbbf0a93d2497f80
+PODFILE CHECKSUM: 11f2a08c7c5b3359582821e08c8ffa2dcb44e60e
 
 COCOAPODS: 1.2.1

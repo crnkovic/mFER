@@ -22,7 +22,7 @@ class Endpoints {
         return COURSES
     }
     
-    static func scores(courseID: Int) -> String {
+    static func scores(courseID: Int16) -> String {
         return SCORES + String(courseID)
     }
     

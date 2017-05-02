@@ -13,4 +13,5 @@ class UserDefaultsKeys {
     static let REFRESH = "refreshInterval"
     static let USERNAME = "username"
     static let PASSWORD = "password"
+    static let UPDATED = "lastUpdate"
 }

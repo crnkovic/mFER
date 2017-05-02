@@ -8,5 +8,7 @@ target 'mFER' do
   pod 'SVProgressHUD'
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
+  pod 'DZNEmptyDataSet'
+  pod "AlamofireRSSParser"
 
 end

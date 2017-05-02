@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
+import AlamofireRSSParser
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -74,9 +76,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         Alert.showLoader()
         
-        var courses = [Course]()
-        
-        Alamofire.request(Endpoints.COURSES, method: .get)
+        Alamofire.request(Endpoints.COURSES)
             .authenticate(user: usernameTextField.text!, password: passwordTextField.text!)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
@@ -89,39 +89,52 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let username = self.usernameTextField.text!
                     let password = self.passwordTextField.text!
                     
+                    // Save username and password to the UserDefaults
+                    UserDefaults.standard.set(username, forKey: UserDefaultsKeys.USERNAME)
+                    UserDefaults.standard.set(password, forKey: UserDefaultsKeys.PASSWORD)
+                    UserDefaults.standard.set(Double(Date.timeIntervalSinceReferenceDate), forKey: UserDefaultsKeys.UPDATED)
+                    
+                    for item in JSON(response.result.value!).arrayValue {
+                        
+                        // Save a new course to the CoreData
+                        let course = Repository.createCourse(item)
+                        
+                        Alamofire.request(Endpoints.scores(courseID: course.id))
+                            .authenticate(user: username, password: password)
+                            .validate(statusCode: 200..<300)
+                            .responseJSON { response in
+                                for score in JSON(response.result.value!).arrayValue {
+                                    // No scores for this course
+                                    if score.isEmpty {
+                                        continue
+                                    }
+                                    
+                                    Repository.createScore(course: course, data: score)
+                                }
+                          }
+                    }
+                    
+                    Alamofire.request("https://www.fer.unizg.hr/feed/rss.php?subscriptions=1")
+                        .authenticate(user: Auth.username(), password: Auth.password())
+                        .validate(statusCode: 200..<300)
+                        .responseRSS() { (response) -> Void in
+                            if let feed: RSSFeed = response.result.value {
+                                for item in feed.items {
+                                    print(item)
+                                }
+                            }
+                    }
+                    
+                    
                     // Reset the form
                     self.usernameTextField.text = ""
                     self.passwordTextField.text = ""
                     self.loginButton.enable()
                     Alert.hideLoader()
                     
-                    UserDefaults.standard.set(username, forKey: UserDefaultsKeys.USERNAME)
-                    UserDefaults.standard.set(password, forKey: UserDefaultsKeys.PASSWORD)
-                    
-                    let result = JSON(response.result.value!).arrayValue
-                    
-                    for e in result {
-                        let course = Course(id: e["sifpred"].intValue, nameHr: e["nazpred_hr"].stringValue, nameEn: e["nazpred_en"].stringValue)
-                        
-                        courses.append(course)
-                        
-                        // Save to core data
-                        // Get all scores
-                        
-                        
-//                        Alamofire.request(Endpoints.scores(courseID: course.courseID()), method: .get)
-//                            .authenticate(user: self.usernameTextField.text!, password: self.passwordTextField.text!)
-//                            .validate(statusCode: 200..<300)
-//                            .responseJSON { scoresResponse in
-//                                print(JSON(scoresResponse.result.value!))
-//                          }
-                    }
-                    
                     self.performSegue(withIdentifier: "LoginSegue", sender: nil)
                 }
             }
-        
-        
     }
 
     // Check if user has entered credentials

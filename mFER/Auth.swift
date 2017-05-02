@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class Auth {
     static func logout() {
@@ -14,6 +16,11 @@ class Auth {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.REFRESH)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.USERNAME)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.PASSWORD)
+        
+        // Remove all user data from the CoreData
+        Repository.clear(entity: "Course")
+        Repository.clear(entity: "Score")
+        Repository.clear(entity: "Lesson")
     }
     
     static func username() -> String {

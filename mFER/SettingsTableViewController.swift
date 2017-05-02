@@ -87,7 +87,8 @@ class SettingsTableViewController: UITableViewController {
         Alamofire.request(Endpoints.CALENDAR, method: .get)
             .authenticate(user: Auth.username(), password: Auth.password())
             .responseString { response in
-                print (response)
+                let schedule = Schedule(data: response.result.value!)
+                
                 Alert.showSuccess(message: "Kalendar ažuriran!")
         }
         

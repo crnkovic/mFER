@@ -10,20 +10,27 @@ import Foundation
 import SVProgressHUD
 
 class Alert {
-    static func showLoader() {
+    class func showLoader() {
         SVProgressHUD.setDefaultStyle(.dark)
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.show()
     }
     
-    static func showSuccess(message: String) {
+    class func showSuccess(message: String) {
         SVProgressHUD.setDefaultStyle(.dark)
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.dismiss(withDelay: 1)
         SVProgressHUD.showSuccess(withStatus: message)
     }
     
-    static func hideLoader() {
+    class func hideLoader() {
         SVProgressHUD.dismiss()
+    }
+    
+    class func showError(message: String) {
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.showError(withStatus: message)
+
     }
 }
